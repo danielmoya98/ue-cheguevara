@@ -28,7 +28,7 @@ const downloads = [
                 <span class="text-blue-300 font-bold uppercase tracking-widest text-[10px] md:text-xs mb-2 block">Gestión 2026</span>
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-none">Portal Académico</h2>
             </div>
-            <a href="/academico/calendario" class="text-white border-b border-white/50 pb-1 hover:text-blue-300 hover:border-blue-300 transition-colors font-bold uppercase text-xs md:text-sm tracking-widest">
+            <a href="/academico/calendario" class="text-white border-b border-white/50 pb-1 hover:text-blue-300 hover:border-blue-300 transition-colors font-bold uppercase text-xs md:text-sm tracking-widest focus:text-blue-300 focus:border-blue-300 outline-none">
                 Ver Calendario Completo →
             </a>
         </div>
@@ -45,14 +45,14 @@ const downloads = [
                     {events.map((event) => {
                         const [day, month] = event.date.split(" ");
                         return (
-                                <div class="bg-white/5 border border-white/10 p-4 rounded-none hover:bg-white/10 transition-colors flex items-start gap-5 group cursor-default border-l-4 border-l-transparent hover:border-l-blue-300">
+                                <div tabindex="0" class="bg-white/5 border border-white/10 p-4 rounded-none hover:bg-white/10 focus:bg-white/10 transition-colors flex items-start gap-5 group cursor-pointer md:cursor-default border-l-4 border-l-transparent hover:border-l-blue-300 focus:border-l-blue-300 focus:outline-none">
                                     <div class="bg-white text-[#000089] p-2 text-center min-w-[60px] w-[60px] shrink-0">
                                         <span class="block text-[10px] font-bold uppercase tracking-widest">{month}</span>
                                         <span class="block text-2xl font-black leading-none tracking-tighter">{day}</span>
                                     </div>
                                     <div class="pt-1">
                                         <span class="text-[9px] font-bold text-blue-300 uppercase tracking-widest mb-1 block">{event.type}</span>
-                                        <h4 class="text-base md:text-lg font-bold leading-tight group-hover:text-blue-200 transition-colors">{event.title}</h4>
+                                        <h4 class="text-base md:text-lg font-bold leading-tight group-hover:text-blue-200 group-focus:text-blue-200 transition-colors">{event.title}</h4>
                                     </div>
                                 </div>
                         );
@@ -68,12 +68,12 @@ const downloads = [
                             <a
                                     href="#"
                                     aria-label={`Descargar ${doc.title}`}
-                                    class="group bg-white p-5 hover:-translate-y-1 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[120px] relative overflow-hidden"
+                                    class="group bg-white p-5 hover:-translate-y-1 focus:-translate-y-1 shadow-sm hover:shadow-xl focus:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[120px] relative overflow-hidden outline-none"
                             >
-                                <div class="absolute top-0 left-0 w-1 h-full bg-[#000089] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></div>
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[#000089] transform scale-y-0 group-hover:scale-y-100 group-focus:scale-y-100 transition-transform duration-300 origin-bottom"></div>
 
                                 <div class="flex justify-between items-start mb-3">
-                                    <div class="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center text-[#000089] group-hover:bg-[#000089] group-hover:text-white transition-colors">
+                                    <div class="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center text-[#000089] group-hover:bg-[#000089] group-focus:bg-[#000089] group-hover:text-white group-focus:text-white transition-colors">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M12 12.75l-3-3m0 0l-3 3m3-3v7.5" />
                                         </svg>
@@ -82,23 +82,14 @@ const downloads = [
                                 </div>
 
                                 <div>
-                                    <h4 class="font-bold text-gray-900 text-base mb-0.5 group-hover:text-[#000089] transition-colors leading-tight">{doc.title}</h4>
+                                    <h4 class="font-bold text-gray-900 text-base mb-0.5 group-hover:text-[#000089] group-focus:text-[#000089] transition-colors leading-tight">{doc.title}</h4>
                                     <p class="text-[10px] text-gray-400 font-medium uppercase tracking-wide">{doc.size}</p>
                                 </div>
                             </a>
                     ))}
                 </div>
 
-                <div class="mt-8 bg-[#000060] border border-blue-500/20 p-4 rounded flex gap-3 items-start">
-                    <div class="shrink-0 text-blue-300 mt-0.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                        </svg>
-                    </div>
-                    <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
-                        Para acceder a las libretas electrónicas, ingresa al <a href="/padres" class="text-white underline decoration-blue-400 hover:decoration-white transition-all font-bold">Portal de Padres</a>.
-                    </p>
-                </div>
+
             </div>
 
         </div>
